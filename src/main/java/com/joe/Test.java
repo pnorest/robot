@@ -28,7 +28,7 @@ public class Test {
      * 测试微信机器人
      */
     private static void testWXRobot() {
-        System.setProperty("jsse.enableSNIExtension", "false");
+        System.setProperty("jsse.enableSNIExtension", "false");//解决linux 中，httpClient 异常问题
         Map<String, Msg> msgHistory = new HashMap<>();
         TlMsgService service = new TlMsgService();
         Robot robot = RobotFactory.create(new MsgListener() {
